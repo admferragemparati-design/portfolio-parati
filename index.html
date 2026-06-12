@@ -556,6 +556,17 @@ function observeFI(){
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',window.scrollY>40));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){fchMBtn();document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}});
 renderCats();renderMarcas();renderFaixa();observeFI();
+
+window.addEventListener('load', function() {
+  if (window.location.hash === '#produtos') {
+    setTimeout(function() {
+      const el = document.querySelector('.busca-wrap');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 800); // aguarda o render completo
+  }
+});
 </script>
 </body>
 </html>
